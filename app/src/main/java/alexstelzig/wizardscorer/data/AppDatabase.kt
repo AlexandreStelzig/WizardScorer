@@ -1,0 +1,2 @@
+package alexstelzig.wizardscorer.data
+
