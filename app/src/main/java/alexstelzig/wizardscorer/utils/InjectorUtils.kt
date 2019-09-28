@@ -1,12 +1,12 @@
 package alexstelzig.wizardscorer.utils
 
-import alexstelzig.wizardscorer.playerselection.PlayerSelectionViewModelFactory
+import alexstelzig.wizardscorer.playerselection.NewGameViewModelFactory
 import android.content.Context
 
 object InjectorUtils {
 
-    fun providePlayerSelectionViewModelFactory(): PlayerSelectionViewModelFactory {
-        return PlayerSelectionViewModelFactory()
+    fun providePlayerSelectionViewModelFactory(context: Context): NewGameViewModelFactory {
+        return NewGameViewModelFactory()
     }
 
 }

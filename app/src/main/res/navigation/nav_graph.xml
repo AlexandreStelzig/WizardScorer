@@ -21,7 +21,7 @@
     </fragment>
     <fragment
             android:id="@+id/playerSelectionFragment"
-            android:name="alexstelzig.wizardscorer.PlayerSelectionFragment"
+            android:name="alexstelzig.wizardscorer.playerselection.NewGameFragment"
             android:label="fragment_player_selection"
-            tools:layout="@layout/fragment_player_selection" />
+            tools:layout="@layout/fragment_new_game" />
 </navigation>

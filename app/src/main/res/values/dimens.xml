@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="info_spacing">25dp</dimen>
+    <dimen name="item_spacing">25dp</dimen>
+    <dimen name="play_name_input_height">40dp</dimen>
+    <dimen name="player_name_input_padding">10dp</dimen>
+</resources>

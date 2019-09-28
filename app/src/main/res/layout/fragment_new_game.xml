@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="viewModel"
+                type="alexstelzig.wizardscorer.playerselection.NewGameViewModel" />
+    </data>
+
+    <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/primaryBackground"
+            android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:context=".playerselection.NewGameFragment">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/playerInfoLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                        android:id="@+id/playerNameLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:text="Player name"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@id/playerNameEditText1"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                        android:id="@+id/dealerLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:text="Dealer"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@id/isFirstDealerCheckbox1"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <CheckBox
+                        android:id="@+id/isFirstDealerCheckbox1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/item_spacing"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:checked="@{viewModel.firstDealer == 0}"
+                        android:gravity="center"
+                        android:onClick="@{() -> viewModel.changeSelectedDealer(0)}"
+                        app:isGone="@{ viewModel.currentNumberOfPlayers &lt; 1 }"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toEndOf="@id/playerNameEditText1"
+                        app:layout_constraintTop_toBottomOf="@id/playerNameLabel" />
+
+                <EditText
+                        android:id="@+id/playerNameEditText1"
+                        android:layout_width="200dp"
+                        android:layout_height="@dimen/play_name_input_height"
+                        android:layout_marginStart="8dp"
+                        android:background="@android:color/white"
+                        android:gravity="center"
+                        android:imeOptions="actionNext"
+                        android:nextFocusDown="@id/playerNameEditText2"
+                        android:inputType="textCapSentences"
+                        android:maxLines="1"
+                        android:padding="@dimen/player_name_input_padding"
+                        app:isGone="@{ viewModel.currentNumberOfPlayers &lt; 1 }"
+                        app:layout_constraintBottom_toBottomOf="@id/isFirstDealerCheckbox1"
+                        app:layout_constraintEnd_toStartOf="@id/isFirstDealerCheckbox1"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/isFirstDealerCheckbox1" />
+
+                <CheckBox
+                        android:id="@+id/isFirstDealerCheckbox2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginTop="@dimen/info_spacing"
+                        android:layout_marginEnd="8dp"
+                        android:checked="@{viewModel.firstDealer == 1}"
+                        android:gravity="center"
+                        android:onClick="@{() -> viewModel.changeSelectedDealer(1)}"
+                        app:isGone="@{ viewModel.currentNumberOfPlayers &lt; 2 }"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toEndOf="@id/playerNameEditText2"
+                        app:layout_constraintTop_toBottomOf="@id/isFirstDealerCheckbox1" />
+
+                <EditText
+                        android:id="@+id/playerNameEditText2"
+                        android:layout_width="200dp"
+                        android:layout_height="@dimen/play_name_input_height"
+                        android:layout_marginStart="8dp"
+                        android:background="@android:color/white"
+                        android:gravity="center"
+                        android:imeOptions="actionNext"
+                        android:nextFocusDown="@id/playerNameEditText3"
+                        android:inputType="textCapSentences"
+                        android:maxLines="1"
+                        android:padding="@dimen/player_name_input_padding"
+                        app:isGone="@{ viewModel.currentNumberOfPlayers &lt; 2 }"
+                        app:layout_constraintBottom_toBottomOf="@id/isFirstDealerCheckbox2"
+                        app:layout_constraintEnd_toStartOf="@id/isFirstDealerCheckbox2"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/isFirstDealerCheckbox2" />
+
+                <CheckBox
+                        android:id="@+id/isFirstDealerCheckbox3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginTop="@dimen/info_spacing"
+                        android:layout_marginEnd="8dp"
+                        android:checked="@{viewModel.firstDealer == 2}"
+                        android:gravity="center"
+                        android:onClick="@{() -> viewModel.changeSelectedDealer(2)}"
+                        app:isGone="@{ viewModel.currentNumberOfPlayers &lt; 3 }"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toEndOf="@id/playerNameEditText3"
+                        app:layout_constraintTop_toBottomOf="@id/isFirstDealerCheckbox2" />
+
+                <EditText
+                        android:id="@+id/playerNameEditText3"
+                        android:layout_width="200dp"
+                        android:layout_height="@dimen/play_name_input_height"
+                        android:nextFocusDown="@id/playerNameEditText4"
+                        android:layout_marginStart="8dp"
+                        android:background="@android:color/white"
+                        android:gravity="center"
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapSentences"
+                        android:maxLines="1"
+                        android:padding="@dimen/player_name_input_padding"
+                        app:isGone="@{ viewModel.currentNumberOfPlayers &lt; 3 }"
+                        app:layout_constraintBottom_toBottomOf="@id/isFirstDealerCheckbox3"
+                        app:layout_constraintEnd_toStartOf="@id/isFirstDealerCheckbox3"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/isFirstDealerCheckbox3" />
+
+                <CheckBox
+                        android:id="@+id/isFirstDealerCheckbox4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginTop="@dimen/info_spacing"
+                        android:layout_marginEnd="8dp"
+                        android:checked="@{viewModel.firstDealer == 3}"
+                        android:gravity="center"
+                        android:onClick="@{() -> viewModel.changeSelectedDealer(3)}"
+                        app:isGone="@{ viewModel.currentNumberOfPlayers &lt; 4 }"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toEndOf="@id/playerNameEditText4"
+                        app:layout_constraintTop_toBottomOf="@id/isFirstDealerCheckbox3" />
+
+                <EditText
+                        android:id="@+id/playerNameEditText4"
+                        android:layout_width="200dp"
+                        android:layout_height="@dimen/play_name_input_height"
+                        android:layout_marginStart="8dp"
+                        android:background="@android:color/white"
+                        android:nextFocusDown="@id/playerNameEditText5"
+                        android:gravity="center"
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapSentences"
+                        android:maxLines="1"
+                        android:padding="@dimen/player_name_input_padding"
+                        app:isGone="@{ viewModel.currentNumberOfPlayers &lt; 4 }"
+                        app:layout_constraintBottom_toBottomOf="@id/isFirstDealerCheckbox4"
+                        app:layout_constraintEnd_toStartOf="@id/isFirstDealerCheckbox4"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/isFirstDealerCheckbox4" />
+
+                <CheckBox
+                        android:id="@+id/isFirstDealerCheckbox5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginTop="@dimen/info_spacing"
+                        android:layout_marginEnd="8dp"
+                        android:checked="@{viewModel.firstDealer == 4}"
+                        android:gravity="center"
+                        android:onClick="@{() -> viewModel.changeSelectedDealer(4)}"
+                        app:isGone="@{ viewModel.currentNumberOfPlayers &lt; 5 }"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toEndOf="@id/playerNameEditText5"
+                        app:layout_constraintTop_toBottomOf="@id/isFirstDealerCheckbox4" />
+
+                <EditText
+                        android:id="@+id/playerNameEditText5"
+                        android:layout_width="200dp"
+                        android:layout_height="@dimen/play_name_input_height"
+                        android:layout_marginStart="8dp"
+                        android:background="@android:color/white"
+                        android:nextFocusDown="@id/playerNameEditText6"
+                        android:gravity="center"
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapSentences"
+                        android:maxLines="1"
+                        android:padding="@dimen/player_name_input_padding"
+                        app:isGone="@{ viewModel.currentNumberOfPlayers &lt; 5 }"
+                        app:layout_constraintBottom_toBottomOf="@id/isFirstDealerCheckbox5"
+                        app:layout_constraintEnd_toStartOf="@id/isFirstDealerCheckbox5"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/isFirstDealerCheckbox5" />
+
+                <CheckBox
+                        android:id="@+id/isFirstDealerCheckbox6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginTop="@dimen/info_spacing"
+                        android:layout_marginEnd="8dp"
+                        android:checked="@{viewModel.firstDealer == 5}"
+                        android:gravity="center"
+                        android:onClick="@{() -> viewModel.changeSelectedDealer(5)}"
+                        app:isGone="@{viewModel.currentNumberOfPlayers &lt; 6}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toEndOf="@id/playerNameEditText6"
+                        app:layout_constraintTop_toBottomOf="@id/isFirstDealerCheckbox5" />
+
+                <EditText
+                        android:id="@+id/playerNameEditText6"
+                        android:layout_width="200dp"
+                        android:layout_height="@dimen/play_name_input_height"
+                        android:layout_marginStart="8dp"
+                        android:background="@android:color/white"
+                        android:gravity="center"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapSentences"
+                        android:maxLines="1"
+                        android:padding="@dimen/player_name_input_padding"
+                        app:isGone="@{viewModel.currentNumberOfPlayers &lt; 6}"
+                        app:layout_constraintBottom_toBottomOf="@id/isFirstDealerCheckbox6"
+                        app:layout_constraintEnd_toStartOf="@id/isFirstDealerCheckbox6"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/isFirstDealerCheckbox6" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <Button
+                    android:id="@+id/decreaseNumberPlayerButton"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/main_button_background"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    app:layout_constraintEnd_toStartOf="@id/startButton"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/playerInfoLayout" />
+
+            <Button
+                    android:id="@+id/startButton"
+                    android:layout_width="125dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/main_button_background"
+                    android:text="Start"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    app:layout_constraintEnd_toStartOf="@id/increaseNumberPlayerButton"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toEndOf="@id/decreaseNumberPlayerButton"
+                    app:layout_constraintTop_toBottomOf="@id/playerInfoLayout" />
+
+            <Button
+                    android:id="@+id/increaseNumberPlayerButton"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/main_button_background"
+                    android:text="+"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/startButton"
+                    app:layout_constraintTop_toBottomOf="@id/playerInfoLayout" />
+
+            <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="75dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/startButton" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
