@@ -1,58 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+        xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <!--    <data>-->
+
+    <!--        <variable-->
+    <!--                name="viewModel"-->
+    <!--                type="alexstelzig.wizardscorer.playerselection.NewGameViewModel" />-->
+    <!--    </data>-->
+
+    <ScrollView
+            android:id="@+id/scrollView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:context=".game.GameFragment">
+            android:layout_height="match_parent"
+            android:background="@color/primaryBackground"
+            android:fillViewport="true">
 
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="End game"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:context=".playerselection.NewGameFragment">
 
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:text="Skip round"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                    android:id="@+id/endGameLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="End game"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/appNameLabel" />
 
-        <View
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:alpha="0.5"
-                android:layout_marginBottom="30dp"
-                android:background="@drawable/ic_keyboard_arrow_up_black_24dp"
-                app:layout_constraintBottom_toBottomOf="@id/summaryLabel"
-                app:layout_constraintEnd_toEndOf="@id/summaryLabel"
-                app:layout_constraintStart_toStartOf="@id/summaryLabel"
-                app:layout_constraintTop_toTopOf="@id/summaryLabel" />
+            <TextView
+                    android:id="@+id/skipRoundLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="Skip round"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/appNameLabel" />
 
-        <TextView
-                android:id="@+id/summaryLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="Summary"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+            <TextView
+                    android:id="@+id/appNameLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/app_title"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toStartOf="@id/skipRoundLabel"
+                    app:layout_constraintStart_toEndOf="@id/endGameLabel"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginBottom="30dp"
+                    android:alpha="0.5"
+                    android:background="@drawable/ic_keyboard_arrow_up_black_24dp"
+                    app:layout_constraintBottom_toBottomOf="@id/summaryLabel"
+                    app:layout_constraintEnd_toEndOf="@id/summaryLabel"
+                    app:layout_constraintStart_toStartOf="@id/summaryLabel"
+                    app:layout_constraintTop_toTopOf="@id/summaryLabel" />
+
+            <TextView
+                    android:id="@+id/summaryLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="Summary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/playerInfoLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/appNameLabel">
+
+                <TextView
+                        android:id="@+id/playerName1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Player 1"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintEnd_toStartOf="@id/playerScore1"/>
+
+                <TextView
+                        android:id="@+id/playerScore1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="000"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toEndOf="@id/playerName1"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/playerBid1"/>
+
+                <EditText
+                        android:id="@+id/playerBid1"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:background="@android:color/white"
+                        android:gravity="center"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapSentences"
+                        android:maxLines="1"
+                        android:padding="@dimen/player_name_input_padding"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/playerScore1"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <Button
+                    android:id="@+id/editButton"
+                    android:layout_width="130dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="42dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@drawable/main_button_background"
+                    android:text="Edit bids"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toStartOf="@id/nextButton"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/playerInfoLayout" />
+
+            <Button
+                    android:id="@+id/nextButton"
+                    android:layout_width="130dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="42dp"
+                    android:background="@drawable/main_button_background"
+                    android:text="Next step"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toEndOf="@id/editButton"
+                    app:layout_constraintTop_toBottomOf="@id/playerInfoLayout" />
+
+            <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="65dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/startButton" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

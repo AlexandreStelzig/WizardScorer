@@ -30,12 +30,18 @@ class NewGameFragment : Fragment() {
         initNumberOfPlayersButtons(binding)
         initStartButton(binding)
 
+//        requireActivity().onBackPressedDispatcher.addCallback {
+//
+//        }
+
         return binding.root
     }
 
     private fun initStartButton(binding: FragmentNewGameBinding) {
         binding.startButton.setOnClickListener { v ->
-            v.findNavController().navigate(R.id.action_playerSelectionFragment_to_gameFragment)
+            GameCreationFactory.createGame(listOf("Player1", "Player2", "Player3"), 0) {
+                v.findNavController().navigate(R.id.action_playerSelectionFragment_to_gameFragment)
+            }
         }
     }
 

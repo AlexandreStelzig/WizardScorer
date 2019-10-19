@@ -9,7 +9,7 @@
             android:id="@+id/mainMenuFragment"
             android:name="alexstelzig.wizardscorer.MainMenuFragment"
             android:label="fragment_main_menu"
-            tools:layout="@layout/fragment_main_menu" >
+            tools:layout="@layout/fragment_main_menu">
         <action
                 android:id="@+id/action_mainMenuFragment_to_playerSelectionFragment"
                 app:destination="@id/playerSelectionFragment"
@@ -17,28 +17,33 @@
                 app:exitAnim="@anim/nav_default_exit_anim"
                 app:launchSingleTop="true"
                 app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-                app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+                app:popExitAnim="@anim/nav_default_pop_exit_anim"
+                app:popUpToInclusive="true" />
     </fragment>
     <fragment
             android:id="@+id/playerSelectionFragment"
             android:name="alexstelzig.wizardscorer.playerselection.NewGameFragment"
             android:label="fragment_player_selection"
-            tools:layout="@layout/fragment_new_game" >
+            tools:layout="@layout/fragment_new_game">
         <action
                 android:id="@+id/action_playerSelectionFragment_to_gameFragment"
                 app:destination="@id/gameFragment"
                 app:enterAnim="@anim/nav_default_enter_anim"
                 app:exitAnim="@anim/nav_default_exit_anim"
+                app:launchSingleTop="true"
                 app:popEnterAnim="@anim/nav_default_enter_anim"
-                app:popExitAnim="@anim/nav_default_exit_anim" />
+                app:popExitAnim="@anim/nav_default_exit_anim"
+                app:popUpToInclusive="true" />
     </fragment>
     <fragment
             android:id="@+id/gameFragment"
             android:name="alexstelzig.wizardscorer.game.GameFragment"
             android:label="fragment_game"
-            tools:layout="@layout/fragment_game" >
+            tools:layout="@layout/fragment_game">
         <action
                 android:id="@+id/action_gameFragment_self"
-                app:destination="@+id/mainMenuFragment" />
+                app:destination="@+id/mainMenuFragment"
+                app:launchSingleTop="true"
+                app:popUpToInclusive="true" />
     </fragment>
 </navigation>
