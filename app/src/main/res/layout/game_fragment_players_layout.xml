@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/playerInfoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appNameLabel"
+        tools:showIn="@layout/fragment_game">
+
+    <TextView
+            android:id="@+id/playerNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text=""
+            app:layout_constraintHorizontal_bias="0.75"
+            android:textColor="@color/black_35"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@id/playerScoreLabel"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+            android:id="@+id/playerScoreLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:text="Score"
+            android:textColor="@color/black_35"
+            android:textSize="16sp"
+            android:minWidth="50dp"
+            app:layout_constraintEnd_toStartOf="@id/playerBidLabel"
+            app:layout_constraintStart_toEndOf="@id/playerNameLabel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+            android:id="@+id/playerBidLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:text="Bid"
+            android:minWidth="50dp"
+            android:textColor="@color/black_35"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@id/playerEditTextLabel"
+            app:layout_constraintStart_toEndOf="@id/playerScoreLabel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+            android:id="@+id/playerEditTextLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:minWidth="60dp"
+            android:text="Took"
+            android:textColor="@color/black_35"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/playerBidLabel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+            android:id="@+id/playerName1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Player 1"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/editText1"
+            app:layout_constraintEnd_toEndOf="@id/playerNameLabel"
+            app:layout_constraintTop_toTopOf="@id/editText1" />
+
+    <TextView
+            android:id="@+id/playerScore1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/editText1"
+            app:layout_constraintEnd_toEndOf="@id/playerScoreLabel"
+            app:layout_constraintStart_toStartOf="@id/playerScoreLabel"
+            app:layout_constraintTop_toTopOf="@id/editText1"
+            tools:text="999" />
+
+    <TextView
+            android:id="@+id/playerBid1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/editText1"
+            app:layout_constraintEnd_toEndOf="@id/playerBidLabel"
+            app:layout_constraintStart_toStartOf="@id/playerBidLabel"
+            app:layout_constraintTop_toTopOf="@id/editText1"
+            tools:text="99" />
+
+    <EditText
+            android:id="@+id/editText1"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/playerEditTextLabel"
+            app:layout_constraintStart_toStartOf="@id/playerEditTextLabel"
+            app:layout_constraintTop_toBottomOf="@id/playerEditTextLabel"
+            tools:text="99" />
+
+    <TextView
+            android:id="@+id/playerName2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Player 2"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/editText2"
+            app:layout_constraintEnd_toEndOf="@id/playerNameLabel"
+            app:layout_constraintTop_toTopOf="@id/editText2" />
+
+    <TextView
+            android:id="@+id/playerScore2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/editText2"
+            app:layout_constraintEnd_toEndOf="@id/playerScoreLabel"
+            app:layout_constraintStart_toStartOf="@id/playerScoreLabel"
+            app:layout_constraintTop_toTopOf="@id/editText2"
+            tools:text="999" />
+
+    <TextView
+            android:id="@+id/playerBid2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/editText2"
+            app:layout_constraintEnd_toEndOf="@id/playerBidLabel"
+            app:layout_constraintStart_toStartOf="@id/playerBidLabel"
+            app:layout_constraintTop_toTopOf="@id/editText2"
+            tools:text="99" />
+
+    <EditText
+            android:id="@+id/editText2"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/playerEditTextLabel"
+            app:layout_constraintStart_toStartOf="@id/playerEditTextLabel"
+            app:layout_constraintTop_toBottomOf="@id/editText1"
+            tools:text="99" />
+
+    <TextView
+            android:id="@+id/playerName3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Player 3"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/editText3"
+            app:layout_constraintEnd_toEndOf="@id/playerNameLabel"
+            app:layout_constraintTop_toTopOf="@id/editText3" />
+
+    <TextView
+            android:id="@+id/playerScore3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/editText3"
+            app:layout_constraintEnd_toEndOf="@id/playerScoreLabel"
+            app:layout_constraintStart_toStartOf="@id/playerScoreLabel"
+            app:layout_constraintTop_toTopOf="@id/editText3"
+            tools:text="999" />
+
+    <TextView
+            android:id="@+id/playerBid3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/editText3"
+            app:layout_constraintEnd_toEndOf="@id/playerBidLabel"
+            app:layout_constraintStart_toStartOf="@id/playerBidLabel"
+            app:layout_constraintTop_toTopOf="@id/editText3"
+            tools:text="99" />
+
+    <EditText
+            android:id="@+id/editText3"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/playerEditTextLabel"
+            app:layout_constraintStart_toStartOf="@id/playerEditTextLabel"
+            app:layout_constraintTop_toBottomOf="@id/editText2"
+            tools:text="99" />
+
+    <TextView
+            android:id="@+id/playerName4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Player 4"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/editText4"
+            app:layout_constraintEnd_toEndOf="@id/playerNameLabel"
+            app:layout_constraintTop_toTopOf="@id/editText4" />
+
+    <TextView
+            android:id="@+id/playerScore4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/editText4"
+            app:layout_constraintEnd_toEndOf="@id/playerScoreLabel"
+            app:layout_constraintStart_toStartOf="@id/playerScoreLabel"
+            app:layout_constraintTop_toTopOf="@id/editText4"
+            tools:text="999" />
+
+    <TextView
+            android:id="@+id/playerBid4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/editText4"
+            app:layout_constraintEnd_toEndOf="@id/playerBidLabel"
+            app:layout_constraintStart_toStartOf="@id/playerBidLabel"
+            app:layout_constraintTop_toTopOf="@id/editText4"
+            tools:text="99" />
+
+    <EditText
+            android:id="@+id/editText4"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/playerEditTextLabel"
+            app:layout_constraintStart_toStartOf="@id/playerEditTextLabel"
+            app:layout_constraintTop_toBottomOf="@id/editText3"
+            tools:text="99" />
+
+    <TextView
+            android:id="@+id/playerName5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Player 5"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/editText5"
+            app:layout_constraintEnd_toEndOf="@id/playerNameLabel"
+            app:layout_constraintTop_toTopOf="@id/editText5" />
+
+    <TextView
+            android:id="@+id/playerScore5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/editText5"
+            app:layout_constraintEnd_toEndOf="@id/playerScoreLabel"
+            app:layout_constraintStart_toStartOf="@id/playerScoreLabel"
+            app:layout_constraintTop_toTopOf="@id/editText5"
+            tools:text="999" />
+
+    <TextView
+            android:id="@+id/playerBid5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/editText5"
+            app:layout_constraintEnd_toEndOf="@id/playerBidLabel"
+            app:layout_constraintStart_toStartOf="@id/playerBidLabel"
+            app:layout_constraintTop_toTopOf="@id/editText5"
+            tools:text="99" />
+
+    <EditText
+            android:id="@+id/editText5"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/playerEditTextLabel"
+            app:layout_constraintStart_toStartOf="@id/playerEditTextLabel"
+            app:layout_constraintTop_toBottomOf="@id/editText4"
+            tools:text="99" />
+
+    <TextView
+            android:id="@+id/playerName6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Player 6"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/editText6"
+            app:layout_constraintEnd_toEndOf="@id/playerNameLabel"
+            app:layout_constraintTop_toTopOf="@id/editText6" />
+
+    <TextView
+            android:id="@+id/playerScore6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/editText6"
+            app:layout_constraintEnd_toEndOf="@id/playerScoreLabel"
+            app:layout_constraintStart_toStartOf="@id/playerScoreLabel"
+            app:layout_constraintTop_toTopOf="@id/editText6"
+            tools:text="999" />
+
+    <TextView
+            android:id="@+id/playerBid6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/editText6"
+            app:layout_constraintEnd_toEndOf="@id/playerBidLabel"
+            app:layout_constraintStart_toStartOf="@id/playerBidLabel"
+            app:layout_constraintTop_toTopOf="@id/editText6"
+            tools:text="99" />
+
+    <EditText
+            android:id="@+id/editText6"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/playerEditTextLabel"
+            app:layout_constraintStart_toStartOf="@id/playerEditTextLabel"
+            app:layout_constraintTop_toBottomOf="@id/editText5"
+            tools:text="99" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
