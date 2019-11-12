@@ -1,20 +1,16 @@
 package alexstelzig.wizardscorer.data.playerround
 
-import alexstelzig.wizardscorer.data.player.Player
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import androidx.room.Relation
 
 @Entity(tableName = "playerround")
 data class PlayerRound(
-    @Relation(parentColumn = "id", entityColumn = "player") val player: Player
-) {
+    @ColumnInfo(name = "player_id") val playerId: Long,
+    @ColumnInfo(name = "round_id") val roundId: Long,
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    val playerRoundId: Int = 0
-
-    var bids: ArrayList<Int> = arrayListOf()
-    var scores: ArrayList<Int> = arrayListOf()
-
-}
+    val playerRoundId: Int = 0,
+    var bids: Int = 0,
+    var scores: Int = 0
+)

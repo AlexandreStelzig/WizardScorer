@@ -39,9 +39,8 @@ class NewGameFragment : Fragment() {
 
     private fun initStartButton(binding: FragmentNewGameBinding) {
         binding.startButton.setOnClickListener { v ->
-            GameCreationFactory.createGame(listOf("Player1", "Player2", "Player3"), 0) {
-                v.findNavController().navigate(R.id.action_playerSelectionFragment_to_gameFragment)
-            }
+            viewModel.onStartClicked()
+            v.findNavController().navigate(R.id.action_playerSelectionFragment_to_gameFragment)
         }
     }
 
